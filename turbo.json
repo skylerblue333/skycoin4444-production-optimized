@@ -1,0 +1,62 @@
+{
+  "$schema": "https://turbo.build/json-schema.json",
+  "version": "2",
+  "extends": ["//"],
+  "globalDependencies": [
+    "**/.env.local",
+    "**/.env.*.local"
+  ],
+  "tasks": {
+    "build": {
+      "description": "Build application",
+      "dependsOn": ["^build"],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "build/**"
+      ],
+      "cache": true
+    },
+    "dev": {
+      "description": "Start development server",
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "description": "Run tests",
+      "outputs": [
+        "coverage/**"
+      ],
+      "cache": true
+    },
+    "test:unit": {
+      "description": "Run unit tests",
+      "cache": true
+    },
+    "test:integration": {
+      "description": "Run integration tests",
+      "cache": true
+    },
+    "test:e2e": {
+      "description": "Run end-to-end tests",
+      "cache": false
+    },
+    "lint": {
+      "description": "Lint code",
+      "cache": true
+    },
+    "type-check": {
+      "description": "Type check code",
+      "cache": true
+    },
+    "format": {
+      "description": "Format code",
+      "cache": false
+    },
+    "deploy": {
+      "description": "Deploy application",
+      "cache": false,
+      "dependsOn": ["build", "test"]
+    }
+  }
+}

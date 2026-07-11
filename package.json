@@ -1,0 +1,61 @@
+{
+  "name": "skycoin4444-production-optimized",
+  "version": "1.0.0-beta.1",
+  "description": "Enterprise-grade SKYCOIN4444 ecosystem optimized for Google Cloud, AWS, iOS, and Android",
+  "license": "MIT AND Proprietary",
+  "author": "Skyler Blue <iitrskyler.spillers@gmail.com>",
+  "homepage": "https://github.com/skylerblue333/skycoin4444-production-optimized",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skylerblue333/skycoin4444-production-optimized.git"
+  },
+  "private": false,
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.4.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build --parallel",
+    "test": "turbo run test --parallel",
+    "test:unit": "turbo run test:unit --parallel",
+    "test:integration": "turbo run test:integration --parallel",
+    "test:e2e": "turbo run test:e2e",
+    "lint": "turbo run lint --parallel",
+    "format": "turbo run format --parallel && prettier --write .",
+    "type-check": "turbo run type-check --parallel",
+    "clean": "turbo run clean --parallel && rm -rf node_modules pnpm-lock.yaml",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "setup": "pnpm install && pnpm run build",
+    "deploy:gcp": "bash scripts/deploy-gcp.sh",
+    "deploy:aws": "bash scripts/deploy-aws.sh",
+    "deploy:ios": "bash scripts/deploy-ios.sh",
+    "deploy:android": "bash scripts/deploy-android.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.4"
+  },
+  "keywords": [
+    "skycoin4444",
+    "blockchain",
+    "cryptocurrency",
+    "web3",
+    "ecosystem",
+    "enterprise",
+    "production-ready",
+    "google-cloud",
+    "aws",
+    "ios",
+    "android"
+  ]
+}

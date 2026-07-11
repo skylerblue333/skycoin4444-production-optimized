@@ -1,0 +1,17 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+catalog:
+  react: '^19.2.1'
+  react-dom: '^19.2.1'
+  typescript: '^5.9.3'
+  vite: '^7.1.7'
+  tailwindcss: '^4.1.14'
+  express: '^4.21.2'
+  trpc: '^11.6.0'
+  drizzle-orm: '^0.44.5'
+  zod: '^4.1.12'
+  vitest: '^2.1.4'
+  eslint: '^9.0.0'
+  prettier: '^3.6.2'
