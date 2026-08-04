@@ -1,4 +1,7 @@
-Skyler Blue Spillers — Portfolio Website Blueprint
+Skyler Blue Spillers — Portfolio Website Blueprint 
+
+https://www.linkedin.com/in/skyler-spillers-7a8bb8424?utm_source=share_via&utm_content=profile&utm_medium=member_android
+
 
 Hero Section
 
