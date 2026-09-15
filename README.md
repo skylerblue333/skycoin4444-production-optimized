@@ -1,52 +1,46 @@
 # SKYCOIN4444 Production Optimized
 
-Production-platform integration shell for the SKYCOIN4444 ecosystem.
+Modular foundation for the SKYCOIN4444 production platform v4.
 
-## Current evidence
+## Current status
 
-This repository is a public TypeScript/JavaScript-oriented platform shell on the `master` branch. The repository currently contains a package manifest with Turbo, TypeScript, Vitest, deployment, Docker, and multi-platform script definitions.
+This repository is an **early v4 foundation**, not a deployed production platform. It currently provides:
 
-A real reusable health contract now exists at `src/platform/health.ts`, with a Vitest unit test at `tests/health.test.ts`.
+- a workspace manifest with strict TypeScript and Vitest checks;
+- shared contracts for principals, authorization, audit events, readiness, and module boundaries;
+- deny-by-default authorization behavior for the foundation policy;
+- truthful readiness semantics that distinguish `ready`, `not_ready`, and `unknown`;
+- tests covering the initial policy and readiness contracts.
 
-## Ecosystem role
+It does **not** yet provide production authentication, real payment processing, message transport, AI provider integration, cloud deployment, durable audit storage, or verified customer/revenue operations.
 
-**Canonical Production Platform → Integration / Operations Shell**
+## Five platform modules
 
-This repository is intended to become the assembly and deployment boundary for verified capabilities from the SKYCOIN4444 ecosystem. It should consume the strongest implementations from the protocol, identity, database, API, realtime, finance, HopeAI, security, infrastructure, frontend, and supporting repositories rather than recreating those systems.
+The v4 platform is organized around five bounded modules:
 
-## Truthful status
+1. **Identity and access** — principals, tenants, roles, sessions, and authorization.
+2. **Marketplace and payments** — listings, orders, vendors, and explicit billing boundaries.
+3. **ShadowChat collaboration** — conversations, notifications, and integrations.
+4. **AI platform** — model routing, agents, evaluations, and usage limits.
+5. **Developer and infrastructure platform** — APIs, health, readiness, jobs, observability, and deployment boundaries.
 
-- Platform manifest: **present**
-- Health contract: **implemented**
-- Health unit test: **implemented**
-- Canonical subsystem integration: **in progress**
-- Production deployment: **not verified**
-- Active customers/subscribers: **not verified**
-- ARR/revenue: **not claimed**
+The foundation shares authorization, audit, readiness, correlation, and versioning contracts. Modules must not bypass these contracts through hidden cross-module state.
 
-The presence of deployment scripts or a package name containing “production” is not evidence that the system is deployed or production-ready.
+## Development
 
-## Monetization path
+```bash
+pnpm install
+pnpm check
+```
 
-The canonical platform should connect verified capabilities to measurable business outcomes:
+The current branch is intended to evolve through pull requests. The default branch must not be modified directly.
 
-1. Identity → customer accounts
-2. Billing/payment → paid subscriptions and transactions
-3. Finance → MRR/ARR and fee accounting
-4. Marketplace → transaction volume and platform fees
-5. Protocol → verified network economics
-6. Analytics → auditable revenue and usage metrics
+## Production truth
 
-No revenue metric is claimed until backed by real production data.
+The presence of deployment scripts or a repository name containing “production” is not evidence that the platform is deployed or production-ready. Before making that claim, verify the build, typecheck, tests, integration tests, deployment configuration, secrets management, database connectivity, authentication, authorization, observability, rollback, TLS, and end-to-end customer/payment workflows.
 
-## Consolidation policy
-
-Preserve working implementations and history. When a subsystem gap exists, prefer mature public open-source foundations with compatible licenses and strong maintenance records. Adapt only what the canonical platform needs, preserve attribution, test the integration, and record the source.
-
-## Production gate
-
-Before calling this repository production-ready, execute and verify the actual build, typecheck, tests, integration tests, deployment configuration, secrets management, database connectivity, authentication, observability, rollback, TLS, and end-to-end customer/payment workflows.
+See [`docs/PLATFORM-V4-FOUNDATION.md`](docs/PLATFORM-V4-FOUNDATION.md) for boundaries and the staged implementation order. Existing deployment and legal documents remain planning material until independently verified in the target environment.
 
 ## License
 
-See the checked-in repository license and applicable third-party dependency licenses. The package manifest currently declares `MIT AND Proprietary`; that licensing model must be clarified before commercial redistribution.
+See the checked-in license and applicable third-party dependency licenses. Commercial redistribution requires a clear license decision for this repository and all integrated components.

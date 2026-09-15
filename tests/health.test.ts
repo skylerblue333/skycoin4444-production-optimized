@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getHealthStatus } from '../src/platform/health';
+import { getHealthStatus } from '../src/platform/health.js';
 
 describe('platform health', () => {
   it('returns a valid operational health contract', () => {
