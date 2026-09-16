@@ -11,11 +11,13 @@
     "build": "tsc --noEmit",
     "check": "pnpm build && pnpm exec vitest run",
     "test": "vitest run",
+    "start:beta": "node --import tsx src/platform/server.ts",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
     "prettier": "^3.5.0",
+    "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
   }

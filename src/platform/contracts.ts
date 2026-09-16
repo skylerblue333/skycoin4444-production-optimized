@@ -44,6 +44,7 @@ export interface ReadinessCheck {
 
 export interface ReadinessReport {
   readonly status: 'ready' | 'not_ready' | 'unknown';
+  readonly readinessPercentage: number;
   readonly service: string;
   readonly version: string;
   readonly checks: readonly ReadinessCheck[];

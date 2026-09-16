@@ -49,6 +49,7 @@ describe('platform readiness', () => {
     ]);
 
     expect(report.status).toBe('not_ready');
+    expect(report.readinessPercentage).toBe(0);
   });
 
   it('does not claim readiness when a check is unknown', () => {
@@ -57,5 +58,16 @@ describe('platform readiness', () => {
     ]);
 
     expect(report.status).toBe('unknown');
+    expect(report.readinessPercentage).toBe(0);
+  });
+
+  it('reports the percentage of passing checks', () => {
+    const report = getReadinessReport('platform-v4', '0.1.0', [
+      { name: 'application', status: 'pass', detail: 'initialized' },
+      { name: 'storage', status: 'unknown', detail: 'not configured' },
+      { name: 'payments', status: 'pass', detail: 'simulated' },
+    ]);
+
+    expect(report.readinessPercentage).toBe(67);
   });
 });
